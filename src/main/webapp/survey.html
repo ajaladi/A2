@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Add custom styles if needed */
+        .required-label::after {
+            content: " *";
+            color: red;
+        }
+
+        .header {
+            background-color: darkgreen;
+            color: yellow;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+    </nav>
+
+    <!-- Header with logo and title -->
+    <div class="header">
+        <img src="logo.png" alt="George Mason University Logo" width="100">
+        <h2>George Mason University</h2>
+    </div>
+
+    <div class="container">
+        <h1>CS Department Campus Visit Survey</h1>
+        <form action="submit_survey.php" method="POST">
+            <!-- Add autofill option -->
+            <div class="form-group">
+                <label for="autofill" class="required-label">Autofill the form if you have filled it once: </label>
+                <input type="checkbox" id="autofill" name="autofill" class="form-check-input">
+            </div>
+     
+            <div class="form-group">
+                <label for="username" class="required-label">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="address" class="required-label">Street Address:</label>
+                <input type="text" id="address" name="address" class="form-control" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="city" class="required-label">City:</label>
+                    <input type="text" id="city" name="city" class="form-control" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="state" class="required-label">State:</label>
+                    <input type="text" id="state" name="state" class="form-control" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="zip" class="required-label">ZIP:</label>
+                    <input type="text" id="zip" name="zip" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telephone" class="required-label">Telephone Number:</label>
+                <input type="tel" id="telephone" name="telephone" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="required-label">E-mail:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="url" class="required-label">URL:</label>
+                <input type="url" id="url" name="url" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="survey-date" class="required-label">Date of Survey:</label>
+                <input type="date" id="survey-date" name="survey-date" class="form-control" required>
+            </div>
+            <!-- checkboxes for other options -->
+
+            <div class="form-group">
+                <label class="required-label">Liked Most About the Campus:</label>
+                <div class="form-check">
+                    <input type="checkbox" id="liked-students" name="liked-most[]" class="form-check-input">
+                    <label for="liked-students" class="form-check-label">Students</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="loc" name="loc" class="form-check-input">
+                    <label for="loc" class="form-check-label">Location</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="Camp" name="campus" class="form-check-input">
+                    <label for="Camp" class="form-check-label">Campus</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="atmos" name="Atmosphere" class="form-check-input">
+                    <label for="atmos" class="form-check-label">Atmosphere</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="dorms" name="dormrooms" class="form-check-input">
+                    <label for="dorms" class="form-check-label">Dorms and rooms</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="Sports" name="spor" class="form-check-input">
+                    <label for="Sports" class="form-check-label">Sports</label>
+                </div>
+                
+            </div>
+            <!-- radio buttons for other options -->
+            <div class="form-group">
+                <label class="required-label">How Did You Hear About Us?</label>
+                <div class="form-check">
+                    <input type="radio" id="hear-friends" name="how-heard" value="friends" class="form-check-input" required>
+                    <label for="hear-friends" class="form-check-label">Friends</label>
+                </div>
+                <div class="form-check">   
+                    <input type="radio" id="tv" name="telv" value="Television" class="form-check-input" required>
+                    <label for="tv" class="form-check-label">Television</label>
+                </div>
+                <div class="form-check">   
+                    <input type="radio" id="Internet" name="Int" value="Internet" class="form-check-input" required>
+                    <label for="Internet" class="form-check-label">Internet</label>
+                </div>
+                <div class="form-check">   
+                    <input type="radio" id="Adv" name="Int" value="Advertisement" class="form-check-input" required>
+                    <label for="Adv" class="form-check-label">Advertisement</label>
+                </div>
+                <div class="form-check">   
+                    <input type="radio" id="SM" name="Smedia" value="Social Media" class="form-check-input" required>
+                    <label for="SM" class="form-check-label">Social Media</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="grad-month">High School Graduation Month:</label>
+                <input type="text" id="grad-month" name="grad-month" list="months" class="form-control">
+                <datalist id="months">
+                    <option value="January">
+                    <option value="February">
+                    <option value="March">
+                    <option value="April">
+                    <option value="May">        
+                    <option value="June">
+                    <option value="July">  
+                    <option value="August">
+                    <option value="September">  
+                    <option value="October"> 
+                    <option value="November">  
+                    <option value="December">                  
+
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="grad-year">High School Graduation Year:</label>
+                <input type="number" id="grad-year" name="grad-year" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="recommend">Likelihood of Recommending:</label>
+                <select id="recommend" name="recommend" class="form-control">
+                    <option value="Very Likely">Very Likely</option>
+                    <option value="Likely">Likely</option>
+                    <option value="Unlikely">Unlikely</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="raffle">Raffle (Enter at least ten comma separated numbers ranging from 1 through 100):</label>
+                <input type="text" id="raffle" name="raffle" class="form-control" required>
+            </div>
+             <!-- Submit and Cancel Buttons -->
+             <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" onclick="cancelForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and jQuery (optional, but needed for some Bootstrap features) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function cancelForm() {
+            // You can add any logic here to handle form cancellation
+            alert("Form has been canceled.");
+        }
+    </script>
+</body>
+</html>
